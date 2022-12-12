@@ -44,3 +44,33 @@ int ans = SumNumber(number);
 Console.WriteLine($"Сумма числа {number} ровна {ans}.");
 */
 
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.(Поправка размер массива и его числа вводит пользователь.)
+
+int[] CreateRandomArray()
+{
+    Console.Write("Введите размер массива: ");
+    int size = Convert.ToInt32(Console.ReadLine());
+    int[] array = new int[size];
+    int arrayNum = 0;
+    int numbers = 1;
+    for(int i = 0; i < size; i++)
+    {
+        Console.Write($"Введите {numbers} число массива: ");
+        arrayNum = Convert.ToInt32(Console.ReadLine());
+        array[i] = arrayNum;
+        numbers++;
+    }
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine($"array[{i + 1}] is {array[i]}");
+    }
+}
+
+int[] myArray = CreateRandomArray();
+
+ShowArray(myArray);
